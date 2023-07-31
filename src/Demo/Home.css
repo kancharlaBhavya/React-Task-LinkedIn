@@ -1,0 +1,70 @@
+.education-div {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .education-div h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .education-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .education-div li {
+    margin-bottom: 5px;
+  }
+  
+  .exp-div {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .exp-div h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .exp-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .exp-div li {
+    margin-bottom: 5px;
+  }
+  
+  .skill-div {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .skill-div h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skill-div li {
+    margin-bottom: 5px;
+  }
+
+  
