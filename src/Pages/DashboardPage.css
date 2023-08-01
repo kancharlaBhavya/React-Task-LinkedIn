@@ -54,7 +54,7 @@
   color: #333;
 }
 
-.edit-button,
+/* .edit-button,
 .done-button {
   background-color: #4caf50;
   color: white;
@@ -65,12 +65,12 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease;
-}
+} */
 
-.edit-button:hover,
+/* .edit-button:hover,
 .done-button:hover {
   background-color: #45a049;
-}
+} */
 
 /* Experience section */
 .profile-experience {

@@ -8,9 +8,10 @@ import { deleteEducation } from '../UsingRedux/action';
 
 const EducationForm = () => {
   const educationList = useSelector((state) => state.educationList);
-
-  const [education, setEducation] = useState('');
-  const [PassedOut,setPassedOut]=useState('');
+  const [education, setEducation] = useState({
+    University:"",
+    Year:""
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navigateto=()=>{
@@ -23,14 +24,18 @@ const EducationForm = () => {
 
 
   const handleSave = () => {
-    const newData = {
-      education,
-      PassedOut
-    };
+    // const newData = {
+    //   education,
+    // };
+    console.log("SDFA",education.University,education.Year)
+if(
+  education.University!== "" &&
+  education.Year!== ""
+){
+    dispatch(addEducation(education));
 
-    dispatch(addEducation(newData));
-
-    setEducation('');
+    setEducation({ University :"",Year:""});
+}
   };
 
   return (
@@ -41,14 +46,43 @@ const EducationForm = () => {
       <div>
         <label><h3>University Name:</h3></label>
         <textarea
-          value={education}
-          onChange={(e) => setEducation(e.target.value)} />
-          {/* <textarea value={PassedOut} onChange={(e) => setPassedOut(e.target.value)}/> */}
+          value={education.University}
+          // onChange={(e) => setEducation(e.target.value)} />
+          onChange={(e) => {
+            const UniversityName = e.target.value;
+            if (
+              /^[A-Za-z0-9\s]+$/.test(UniversityName) ||
+              UniversityName === ""
+            ) {
+              setEducation({
+                ...education,
+                University: UniversityName,
+              });
+            }
+          }}/>
+
+      </div>
+
+      {/* year */}
+      <div>
+        <label><h3>Year:</h3></label>
+        <textarea className='textarea'
+          value={education.Year}
+          onChange={(e) => {
+            const PassedoutYear = e.target.value;
+              setEducation({
+                ...education,
+                Year: PassedoutYear,
+              });
+            
+          }}/>
+
       </div>
       
       <button onClick={handleSave}>Save </button>
       <button onClick={navigateto}>Done</button>
     </div><div>
+      {/* edu list */}
         <h2>Education List</h2>
 
         {educationList.length > 0 && (
@@ -57,7 +91,8 @@ const EducationForm = () => {
             <ul>
               {educationList.map((edu, index) => (
                 <li key={index}>
-                  {edu.education}
+                  <p>{edu.University}</p>
+                  <p>{edu.Year}</p>
                   <button onClick={() => handleDeleteEducation(index)}>Delete</button>
                 </li>
               ))}

@@ -22,22 +22,28 @@ import NavBarNew from "./NavBarNew";
 const HomePage = (props) => {
     const navigate=useNavigate('');
     const [openBox,handleDisplay]=useState(false);
-
+const [expbox,setExpBox]=useState(false);
     const handleClose=()=>{
         handleDisplay(false);
     }
     const openDialgoueBox = ()=>{
         handleDisplay(true);
     }
+    const closeExpBox =()=>{
+      setExpBox(false);
+    }
+
+    const openExpBox =()=>{
+      setExpBox(true);
+
+    }
     const buttonStyle = {
-      width: "10rem",
+      width: "2rem",
       fontsize: "1.5rem",
-      height: "2rem",
-      padding: "5px",
-      borderRadius: "10px",
-      backgroundColor: "blue",
-      color: "White",
-      border: "2px solid yellow",
+      // height: "0.5rem",
+      // padding: "5px",
+
+      
    };
     const navigatetoexp=()=>{
         navigate("/experence");
@@ -80,22 +86,25 @@ return (
 
       {/*  Educ*/}
       <div className="education-div">
-        <h2>Education</h2>
+      <div className="edit-button">
+        <h2>Education <button style={buttonStyle } onClick={openDialgoueBox}><i className="fas fa-pencil-alt"></i></button>
+</h2></div>
 
         {educationList.length > 0 && (
-          <>
-            
+          <> 
             <ul>
               {educationList.map((edu, index) => (
                 <li key={index}>
-                  {edu.education}
+                  
+                 <b>University:</b>{edu.University}
+                  <b>Year:</b>{edu.Year}
+                  
                 </li>
               ))}
             </ul>
           </>
         )}
-                <button style={buttonStyle  } onClick={openDialgoueBox}>Edit</button>
-                <Dialog onClose = {handleClose} open = {openBox}>
+          <Dialog onClose = {handleClose} open = {openBox}>
             <DialogTitle> Update Education </DialogTitle>
             <h3>
                <EducationForm/>
@@ -106,7 +115,9 @@ return (
 
 {/* exp */}
 <div className="exp-div">
-<h2>Experience </h2>
+<h2>Experience    
+<button style={buttonStyle } onClick={openExpBox}><i className="fas fa-pencil-alt"></i></button>
+</h2>
 {experienceList.length > 0 && (
           <>
             
@@ -117,11 +128,16 @@ return (
                 </li>
               ))}
             </ul>
-            
-                      </>
+             </>
                       
         )}
-        <button onClick={navigatetoexp}>Edit</button>
+         <Dialog onClose = {closeExpBox} open = {expbox}>
+            <DialogTitle> Update Experence </DialogTitle>
+            <h3>
+               <ExperienceForm/>
+            </h3>
+         </Dialog>
+        {/* <button onClick={navigatetoexp}>Edit</button> */}
             </div>
 {/* Skills */}
 <div className="skill-div">

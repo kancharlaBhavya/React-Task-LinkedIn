@@ -30,7 +30,6 @@ const ExperienceForm = () => {
 
   return (
     <><div>
-      <button onClick={navigateto}>Back</button>
 
       <h2>Experience Form</h2>
       <div>
@@ -38,15 +37,15 @@ const ExperienceForm = () => {
         <textarea
           value={experience}
           onChange={(e) => setExperience(e.target.value)}
-          rows={6}
-          cols={50} />
+           />
       </div>
       <button onClick={handleSave}>Save </button>
-    </div><div className="exp-div">
+      <button onClick={navigateto}>Done</button>
+
+    </div><div className="experence-div">
         <h2>Experience List</h2>
         {experienceList.length > 0 && (
           <>
-
             <ul>
               {experienceList.map((exp, index) => (
                 <li key={index}>
@@ -59,6 +58,7 @@ const ExperienceForm = () => {
           </>
 
         )}
+        
       </div></>
   );
 };
