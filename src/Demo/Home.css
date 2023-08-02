@@ -54,6 +54,7 @@
   
   .exp-div li {
     margin-bottom: 5px;
+    justify-content: space-between;
   }
   
   .skill-div {

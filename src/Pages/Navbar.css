@@ -10,9 +10,10 @@
     position: relative;
   }
   .navbar-profile img {
-    height: 5rem;
+    height: 2rem;
     margin-right: 1rem;
-    border-radius: 50%;
+    margin-bottom: 5rem;
+    
     
   }
   .navbar a {
@@ -30,7 +31,9 @@
   }
   
   .navbar-profile{
-    margin-right: 6rem;
+    margin-right: 3rem;
+    height: 3rem;
+
   }
 
 
@@ -41,6 +44,7 @@
     top: 100%;
 
     right: 0;
+    /* display:inline; */
 
     background-color: #fff;
 

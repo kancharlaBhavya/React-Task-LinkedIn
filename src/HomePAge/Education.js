@@ -24,10 +24,6 @@ const EducationForm = () => {
 
 
   const handleSave = () => {
-    // const newData = {
-    //   education,
-    // };
-    console.log("SDFA",education.University,education.Year)
 if(
   education.University!== "" &&
   education.Year!== ""
@@ -89,7 +85,7 @@ if(
           <>
 
             <ul>
-              {educationList.map((edu, index) => (
+              {educationList.map((edu , index) => (
                 <li key={index}>
                   <p>{edu.University}</p>
                   <p>{edu.Year}</p>

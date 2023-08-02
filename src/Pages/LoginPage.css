@@ -22,7 +22,7 @@
 
 .login-box input {
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #cccccc;
@@ -32,7 +32,7 @@
 
 .login-box button {
   display: block;
-  width: 100%;
+  width: 96%;
   padding: 10px;
   background-color: #007bff;
   color: #ffffff;
@@ -54,8 +54,8 @@
   text-align: center;
 }
 
-/* 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -73,8 +73,7 @@ body {
   position: relative;
   width: 380px;
   height: 420px;
-  /* background: #1c1c1c; */
-  /* border-radius: 8px;
+   border-radius: 8px;
   overflow: hidden;
 }
 .box::before {

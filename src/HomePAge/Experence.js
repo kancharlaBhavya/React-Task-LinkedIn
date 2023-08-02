@@ -8,7 +8,11 @@ import { deleteExperience } from '../UsingRedux/action';
 const ExperienceForm = () => {
   const experienceList = useSelector((state) => state.experienceList);
 
-  const [experience, setExperience] = useState('');
+  const [experience, setExperience] = useState({
+    Company:"",
+    Position:"",
+    Location:"",
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navigateto=()=>{
@@ -19,25 +23,74 @@ const ExperienceForm = () => {
   };
 
   const handleSave = () => {
-    const newData = {
-      experience,
-    };
+    if(experience.Company!== "" && experience.Position!=="" 
+    && experience.Location!=="" ){
+    dispatch(addExperience(experience));
 
-    dispatch(addExperience(newData));
-
-    setExperience('');
+    setExperience({Company:"",Position:"",Location:"",});
+    }
   };
 
   return (
-    <><div>
+    <><div className='exp-form'>
 
       <h2>Experience Form</h2>
       <div>
         <label>Experience:</label>
         <textarea
-          value={experience}
-          onChange={(e) => setExperience(e.target.value)}
-           />
+          value={experience.Company}
+          // onChange={(e) => setExperience(e.target.value)}
+          onChange={(e) =>{
+            const CompanyName =e.target.value;
+            if (
+              /^[A-Za-z0-9\s]+$/.test(CompanyName) ||
+              CompanyName === ""
+            ) {
+              setExperience({
+                ...experience,
+                Company: CompanyName,
+              });
+            }
+          }}
+          />
+      </div>
+      <div>
+        <label>Position:</label>
+        <textarea
+          value={experience.Position}
+          // onChange={(e) => setExperience(e.target.value)}
+          onChange={(e) =>{
+            const PositionName =e.target.value;
+            if (
+              /^[A-Za-z0-9\s]+$/.test(PositionName) ||
+              PositionName === ""
+            ) {
+              setExperience({
+                ...experience,
+                Position: PositionName,
+              });
+            }
+          }}
+          />
+      </div>
+      <div>
+        <label>Location:</label>
+        <textarea
+          value={experience.Location}
+          // onChange={(e) => setExperience(e.target.value)}
+          onChange={(e) =>{
+            const LocationName =e.target.value;
+            if (
+              /^[A-Za-z0-9\s]+$/.test(LocationName) ||
+              LocationName === ""
+            ) {
+              setExperience({
+                ...experience,
+                Location: LocationName,
+              });
+            }
+          }}
+          />
       </div>
       <button onClick={handleSave}>Save </button>
       <button onClick={navigateto}>Done</button>
@@ -49,7 +102,9 @@ const ExperienceForm = () => {
             <ul>
               {experienceList.map((exp, index) => (
                 <li key={index}>
-                  {exp.experience}
+                  <p><u>Company:</u>{exp.Company}</p>
+                  <p><u>Position:</u>{exp.Position}</p>
+                  <p><u>Location:</u>{exp.Location}</p>
                   <button onClick={() => handleDeleteExperience(index)}>Delete</button>
                 </li>
               ))}

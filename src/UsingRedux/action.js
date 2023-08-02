@@ -4,6 +4,8 @@ export const ADD_SKILL = "ADD_SKILL";
 export const DELETE_EDUCATION = "DELETE_EDUCATION";
 export const DELETE_EXPERIENCE = "DELETE_EXPERIENCE";
 export const DELETE_SKILL = "DELETE_SKILL";
+export const ADD_CONTACT="ADD_CONTACT";
+
 
 export const addEducation = (data) => {
   return {
@@ -44,5 +46,11 @@ export const deleteSkill = (index) => {
   return {
     type: DELETE_SKILL,
     payload: index,
+  };
+};
+export const updateContact =(data) =>{
+  return{
+    type : ADD_CONTACT,
+    payload :data,
   };
 };

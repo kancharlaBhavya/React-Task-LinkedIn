@@ -1,8 +1,6 @@
-// ContactForm.js
-
 import React, { useState } from "react";
 
-const ContactForm = () => {
+const ContactForm = ({ onSave }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,15 +16,15 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform action to save contact details, e.g., send to the server
-    console.log(formData);
+    // Pass the updated formData to the onSave callback
+    onSave(formData);
   };
 
   return (
     <div>
-      <h2>Contact Details</h2>
+      <h6>Contact Details</h6>
       <form onSubmit={handleSubmit}>
-        <div>
+      <div>
           <label htmlFor="name">Name:</label>
           <input
             type="text"

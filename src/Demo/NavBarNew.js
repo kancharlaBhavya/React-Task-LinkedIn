@@ -21,6 +21,21 @@ export default function NavBarNew() {
     event.currentTarget.nextSibling.classList.toggle('show');
   };
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleDropdownClick = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleLogoutClick = () => {
+    navigate("/");
+  };
+const handledashboardClick=()=>{
+  navigate('/dashboard');
+}
+const handleMainClick=()=>{
+  navigate("/main");
+}
   return (
     <nav>
       <div className="linkedin-img">
@@ -67,26 +82,42 @@ export default function NavBarNew() {
               Contact
             </Link>
           </li>
-          
-          <li>
-            <a href="#" className="links" onClick={toggleDropdown}>
-              Profile
-            </a>
-            <ul className="dropdown">
-              <li>
-                <Link className="Logout" to="/">
-                  Logout
-                </Link>
-              </li>
-              <li>
-                <Link className="profile" to="/dashboard">
-                  Dashboard
-                </Link>
-              </li>
-            </ul>
-          </li>
-        </div>
+        
+     
+      
+      </div>
       </ul>
+      <div className="navbar-profile">
+        <div className='adsads'>
+          {" "}
+          <img src="/profileimg.png"  placeholder= "Profile1" onClick={handleDropdownClick} />
+          
+        
+
+        {isDropdownOpen && (
+          <div className="dropdown">
+            <li>
+              <button>
+                <button
+                  href="/"
+                  onClick={handleLogoutClick}
+                  style={{ color: "black" }}
+                >
+                  Logout
+                </button>
+              </button>
+              <button>
+                <button  onClick={handledashboardClick}>Dashboard</button>
+              </button>
+              <button>
+                <button  onClick={handleMainClick}>Main</button>
+              </button>
+              
+            </li>
+          </div>
+        )}
+         </div>
+      </div>
     </nav>
   );
 }

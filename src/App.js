@@ -51,6 +51,9 @@ import ContactDetails from './Demo/Contact';
 import HomePage from './Demo/Home';
 import AboutPage from './Demo/AboutPage';
 import DialogueBox from './Demo/Dialogue';
+import FlipDetails from './Demo/FlipDetails';
+import ContactsForm from './HomePAge/Contacts123';
+import CardFlip from './Demo/CardFlip';
 
 
 const App = () => {
@@ -68,6 +71,9 @@ const App = () => {
         <Route path="/contact" element={<ContactDetails/>}/>
         <Route path="/about" element={<AboutPage/>}/>
         <Route path="/dialogue" element={<DialogueBox/>}/>
+        <Route path='/flip' element={<FlipDetails/>}/>
+        <Route path='/contact123' element={<ContactsForm/>}/>
+        <Route path='/cardflip' element={<CardFlip/>}/>
       </Routes>
     </Router>
   );

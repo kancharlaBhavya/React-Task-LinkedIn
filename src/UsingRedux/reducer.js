@@ -1,9 +1,13 @@
-import { ADD_EDUCATION,ADD_EXPERIENCE,ADD_SKILL,DELETE_EDUCATION,DELETE_EXPERIENCE,DELETE_SKILL } from "./action";
+import {ADD_EDUCATION,ADD_EXPERIENCE,ADD_SKILL,DELETE_EDUCATION,DELETE_EXPERIENCE,DELETE_SKILL,ADD_CONTACT } from "./action";
 
 const initialState = {
+  user: {
+    about: "",
+  },
   educationList: [],
   experienceList: [],
   skillList: [],
+  contactList:[],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -13,6 +17,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         educationList: [...state.educationList, action.payload],
       };
+    
     case ADD_EXPERIENCE:
       return {
         ...state,
@@ -23,6 +28,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         skillList: [...state.skillList, action.payload],
       };
+      case ADD_CONTACT:
+        return{
+          ...state,
+          contactList: [...state.contactList, action.payload.data],
+        };
     case DELETE_EDUCATION:
       return {
         ...state,
@@ -38,6 +48,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         skillList: state.skillList.filter((skill, index) => index !== action.payload),
       };
+   
     default:
       return state;
   }

@@ -18,6 +18,7 @@ import { Navigate } from "react-router-dom";
 import Navigation from "./NavBarNew";
 import ExperienceForm from "../HomePAge/Experence";
 import NavBarNew from "./NavBarNew";
+import CardFlip from "./CardFlip";
 
 const HomePage = (props) => {
     const navigate=useNavigate('');
@@ -73,12 +74,8 @@ return (
 
 
 {/* Profile img */}
-  <div className="backGround-clr">
-       <div className="img1"  id="profile-home"> 
-<img src="/logo512.png"  style={{borderRadius: "50%" , height:"150px" , width:"150px"}}></img>
-       </div> 
-       <div className="name"><h2>Kancharla Sri Lakshmi Ratna Bhavya</h2>   </div>
-      </div> 
+<center>
+ <CardFlip/> </center>
       {/* About */}
       <div className="About-page" id="about">
       <AboutPage/> 
@@ -124,7 +121,9 @@ return (
             <ul>
               {experienceList.map((exp, index) => (
                 <li key={index}>
-                  {exp.experience}
+                 <p><b>Company:</b>{exp.Company}</p>
+                  <p><b>Position:</b>{exp.Position}</p>
+                  <p><b>Location:</b>{exp.Location}</p>
                 </li>
               ))}
             </ul>
