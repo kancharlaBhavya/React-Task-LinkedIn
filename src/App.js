@@ -54,6 +54,8 @@ import DialogueBox from './Demo/Dialogue';
 import FlipDetails from './Demo/FlipDetails';
 import ContactsForm from './HomePAge/Contacts123';
 import CardFlip from './Demo/CardFlip';
+import FetchData from './Pratice/FetchData';
+import PostData from './Pratice/PostData';
 
 
 const App = () => {
@@ -74,6 +76,8 @@ const App = () => {
         <Route path='/flip' element={<FlipDetails/>}/>
         <Route path='/contact123' element={<ContactsForm/>}/>
         <Route path='/cardflip' element={<CardFlip/>}/>
+        <Route path="/fetch" element={<FetchData/>}/>
+        <Route path='/post' element={<PostData/>}/>
       </Routes>
     </Router>
   );

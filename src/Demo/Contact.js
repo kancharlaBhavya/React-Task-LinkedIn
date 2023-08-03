@@ -4,9 +4,9 @@ import ContactForm from "./ContactForm";
 const ContactDetails = (props) => {
   const [editMode, setEditMode] = useState(false);
   const [contactData, setContactData] = useState({
-    name: "John Doe",
-    email: "john@example.com",
-    phoneNumber: "(123) 456-7890",
+    name: "Kancharla Bhavya",
+    email: "Bahvya8@example.com",
+    phoneNumber: "1234567890",
   });
 
   const handleEdit = () => {
@@ -32,11 +32,11 @@ const ContactDetails = (props) => {
     <div>
       {!editMode ? (
         <div>
-          <h6>My Contact Details
+          <h5>My Contact Details
           <p>Name: {contactData.name}</p>
           <p>Email: {contactData.email}</p>
           <p>Phone Number: {contactData.phoneNumber}</p>
-          <button onClick={handleEdit}>Edit</button></h6>
+          <button onClick={handleEdit}>Edit</button></h5>
         </div>
       ) : (
         <div>

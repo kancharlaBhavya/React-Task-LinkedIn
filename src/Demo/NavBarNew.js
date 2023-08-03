@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './NavBarNew.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBarNew() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -26,7 +27,7 @@ export default function NavBarNew() {
   const handleDropdownClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-
+const navigate   =useNavigate();
   const handleLogoutClick = () => {
     navigate("/");
   };
@@ -99,7 +100,7 @@ const handleMainClick=()=>{
             <li>
               <button>
                 <button
-                  href="/"
+                  href="/home"
                   onClick={handleLogoutClick}
                   style={{ color: "black" }}
                 >

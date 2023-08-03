@@ -46,11 +46,34 @@ justify-content: space-between;
 }
 .Links{
     display: flex;
+    color: black;
     
 }
-/* .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-} */
+a.contact-details {
+  color: rgb(50, 169, 209);
+}
+a.contact-details:hover{
+color: blue;
+}
+a.links{
+  color:rgb(50, 169, 209) ;
+}
+a.links:hover{
+  color:blue;
+}
+a.About{
+  color: rgb(50,169,209);
+}
+a.About:hover{
+  color: blue;
+}
+a.homepage{
+  color: rgb(50, 169, 209);
+}
+a.homepage:hover{
+  color:blue ;
+}
+
 
 nav ul ul {
   display: none;  
