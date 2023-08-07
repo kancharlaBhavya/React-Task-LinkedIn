@@ -1,3 +1,6 @@
+.about{
+  text-align: center;
+}
 .education-div {
     margin: 20px;
     padding: 20px;
@@ -5,7 +8,18 @@
     border-radius: 8px;
     background-color: #f9f9f9;
   }
-  
+  .education-div ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px; 
+  }
   .education-div h2 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -78,6 +92,10 @@
   
   .skill-div li {
     margin-bottom: 5px;
+    justify-content: space-around;
+    display:contents;
   }
-
+ul.SkillsList{
+  display: initial;
+}
   

@@ -5,14 +5,19 @@ import './LoginPage.css';
 const LoginPage = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  localStorage.setItem("user:" ,username);
+  localStorage.setItem("username:" ,username);
   localStorage.setItem("password:" ,password);
   const navigate = useNavigate();
 
   const handleLogin = () => {
     
     if (username === 'bhavya' && password === '123456') {
+      // setIsAuth(true);
       navigate('/home');
+    }
+    else if(username === 'admin' && password === 'admin'){
+      // setIsAuth(true);
+      navigate('/dashboard');
     }
     else{
       alert("Invalid user");
@@ -39,8 +44,10 @@ const LoginPage = (props) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <div className='login-button'>
-        <button onClick={handleLogin}>Login</button>
+        <div className='login-button123'>
+
+        <button onClick={handleLogin} disabled={!username || !password}>Login</button>
+        
         </div>
       </div>
     </div>

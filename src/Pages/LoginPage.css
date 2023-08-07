@@ -35,15 +35,15 @@
   width: 96%;
   padding: 10px;
   background-color: #007bff;
-  color: #ffffff;
+  /* color: #ffffff; */
   border: 1px solid #cccccc;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
 }
-.login-box button:hover {
+/* .login-box button:hover {
   background-color: #0056b3;
-}
+} */
 
 .login-box .error {
   color: red;

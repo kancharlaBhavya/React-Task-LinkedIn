@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import LoginPage from "./LoginPage";
 import { useNavigate } from "react-router-dom";
-import './DashboardPage.css';
+// import './DashboardPage.css';
 import SkillDelete from "../Skills/SkillDelete";
 import { useState } from "react";
 import Addskills from "../Skills/Addskills";

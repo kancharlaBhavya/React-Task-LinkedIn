@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
+import { Component } from 'react';
 
 function AboutPage() {
+    
     const [text, setText] = useState('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ipsum nulla, lacinia id tempor sed, dapibus a urna. Nullam metus ante, imperdiet quis quam et, porta dictum massa. Vivamus semper iaculis imperdiet. In hac habitasse platea dictumst. Quisque quis hendrerit nunc, vitae semper ipsum. Aenean pulvinar ac leo vitae iaculis')
 
     const [isEditing, setIsEditing] = useState(false);
@@ -15,6 +17,7 @@ function AboutPage() {
     const handleDone = () => {
       setIsEditing(false);
     };
+    
 return(
     <div className="about">
           <h1>About</h1>

@@ -38,7 +38,7 @@
 
 // App.js
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route,Routes, Switch } from 'react-router-dom';
 import DisplayPage from './UsingRedux/display';
 import DashboardPage from './Pages/DashboardPage';
@@ -56,11 +56,16 @@ import ContactsForm from './HomePAge/Contacts123';
 import CardFlip from './Demo/CardFlip';
 import FetchData from './Pratice/FetchData';
 import PostData from './Pratice/PostData';
-
+import Diableicon from './Pratice/Diableicon/Diableicon';
+import Counter from './Pratice/lifecycle/Component';
+import UnMount from './Pratice/lifecycle/unMount';
 
 const App = () => {
+
+
+
   return (
-    <Router>
+    <Router >
       <Routes>
         <Route path='/Home' element={<HomePage/>}/>
         <Route path="/" element={<LoginPage/>}/>
@@ -78,6 +83,9 @@ const App = () => {
         <Route path='/cardflip' element={<CardFlip/>}/>
         <Route path="/fetch" element={<FetchData/>}/>
         <Route path='/post' element={<PostData/>}/>
+        <Route path="/Diableicon" element={<Diableicon/>}/>
+        <Route path='/count' element={<Counter/>}/>
+        <Route path='/unmount' element={<UnMount/>}/>
       </Routes>
     </Router>
   );

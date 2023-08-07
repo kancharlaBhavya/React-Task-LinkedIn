@@ -21,7 +21,9 @@ import NavBarNew from "./NavBarNew";
 import CardFlip from "./CardFlip";
 
 const HomePage = (props) => {
+  
     const navigate=useNavigate('');
+   
     const [openBox,handleDisplay]=useState(false);
 const [expbox,setExpBox]=useState(false);
     const handleClose=()=>{
@@ -56,6 +58,7 @@ const [expbox,setExpBox]=useState(false);
 const educationList = useSelector((state) => state.educationList);
 const experienceList = useSelector((state) => state.experienceList);
   const skillList = useSelector((state) => state.skillList);
+
 const dispatch = useDispatch();
 
 // const handleDeleteEducation = (index) => {
@@ -78,7 +81,7 @@ return (
  <CardFlip/> </center>
       {/* About */}
       <div className="About-page" id="about">
-      <AboutPage/> 
+      <AboutPage/>
       </div>    
 
       {/*  Educ*/}
@@ -141,21 +144,26 @@ return (
 {/* Skills */}
 <div className="skill-div">
 <h2>Skills</h2>
-<div className="SkillsList">
+
 {skillList.length > 0 && (
-          <>
-        
+          
+        <>
             <ul>
-              {skillList.map((skill, index) => (
+            
+              {/* {skillList.map((skill, index) => (
                 <li key={index}>
                   {skill.skill}
                 </li>
-              ))}
+              ))} */}
+              <p>{skillList.map((skill) => skill.skill).join(", ")}</p>
+
             </ul>
-          </>
+            
+         </>
         )}
+        
         <button onClick={navigatetoskill}>Edit</button>
-            </div>
+            
         </div>       
 
 </div>

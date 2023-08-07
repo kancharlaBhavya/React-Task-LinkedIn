@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 export default function NavBarNew() {
+  
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [toggleNav, setToogleNav] = useState(true);
+  const [toggleNav, setToogleNav] = useState(true);  
 
   useEffect(() => {
+   
     window.addEventListener("resize", handleResize);
     if (window.innerWidth <= 507) setToogleNav(false);
     else setToogleNav(true);
@@ -21,6 +23,7 @@ export default function NavBarNew() {
     event.preventDefault();
     event.currentTarget.nextSibling.classList.toggle('show');
   };
+
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -38,87 +41,41 @@ const handleMainClick=()=>{
   navigate("/main");
 }
   return (
-    <nav>
+    <div className='nav-bar1234'>
       <div className="linkedin-img">
         <img className="img-Linkedin" src="/LinkedIn.png" />
       </div>
-      <ul>
-        <div className='Links'>
-          <li>
-            <a href="#profile-home" className="homepage" >
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#about" className="About" >
-              About
-            </a>
-          </li>
-          <div className='dropedown1'>
-          <li>
-            <a href="#" className="links" onClick={toggleDropdown}>
-              Update
-            </a>
-            <ul className="dropdown-content">
-              <li>
-                <Link className="Education-update" to="/education">
-                  Education
-                </Link>
-              </li>
-              <li>
-                <Link className="experence-update" to="/experence">
-                  Experience
-                </Link>
-              </li>
-              <li>
-                <Link className="Skills-update" to="/skills">
-                  Skills
-                </Link>
-              </li>
-            </ul>
-          </li>
-</div>
-          <li>
-            <Link className="contact-details" to="/contact">
-              Contact
-            </Link>
-          </li>
-        
-     
-      
+      <div className='links1234'>
+        <Link to='#home'>Home</Link>
+        <Link to='#about'>About</Link>
+        <Link to="#" >Update</Link>
+        <Link to="/contact" > Contact</Link>
       </div>
-      </ul>
-      <div className="navbar-profile">
-        <div className='adsads'>
-          {" "}
-          <img src="/profileimg.png"  placeholder= "Profile1" onClick={handleDropdownClick} />
-          
-        
-
-        {isDropdownOpen && (
-          <div className="dropdown">
-            <li>
+      <div className='dropdown1234'>
+      <img src="/profileimg.png" onClick={handleDropdownClick} />
+      {isDropdownOpen && (
+          <div className="dropdown000">
+            <ul>
               <button>
-                <button
-                  href="/home"
+                <a
+                  href="/"
                   onClick={handleLogoutClick}
                   style={{ color: "black" }}
                 >
                   Logout
-                </button>
+                </a>
               </button>
               <button>
-                <button  onClick={handledashboardClick}>Dashboard</button>
+                <a href="/dashboard">Dashboard</a>
               </button>
-              <button>
-                <button  onClick={handleMainClick}>Main</button>
-              </button>
-              
-            </li>
+            </ul>
           </div>
         )}
-         </div>
+      
       </div>
-    </nav>
+
+      
+     
+    </div>
   );
 }
